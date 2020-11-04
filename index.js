@@ -55,6 +55,6 @@ function buttonB2() {
 }
 
 function getwidth() {
-  var w = window.innerWidth;
+  var w = "Total Width: " + screen.width;
   document.getElementById("widthinfo").innerHTML = w
 }
