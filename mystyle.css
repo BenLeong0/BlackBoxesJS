@@ -3,6 +3,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+h1 {
+  font-size: 300%
+}
+
 #blackbox {
   display: inline-block;
   max-width: 800px;
