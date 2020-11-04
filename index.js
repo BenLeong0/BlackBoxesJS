@@ -54,5 +54,7 @@ function buttonB2() {
   document.getElementById("number2").innerHTML = values[n]
 }
 
-var w = window.innerWidth;
-document.getElementById("widthinfo").innerHTML = w
+function getwidth() {
+  var w = window.innerWidth;
+  document.getElementById("widthinfo").innerHTML = w
+}
