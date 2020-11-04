@@ -25,39 +25,27 @@ if (window.innerHeight > window.innerWidth) {
   document.getElementsByTagName("a")[1].style.width = "100%"
   document.getElementsByTagName("a")[1].style.fontSize = "250%"
 
-  // questions = document.getElementsByClassName("question")
-  // var j;
-  // for (j = 0; j < questions.length; j++) {
-  //   console.log(questions[j])
-  //   questions[j].style.fontSize = "200%"
-  //   questions[j].style.width = "100%"
-  // }
 } else {
   console.log('Landscape')
   document.getElementById("questions").style.width = "70%"
   document.getElementById("questions").style.maxWidth = "800px"
 }
 
-var values = []
-
-function eval_f(N) {
-  values = []
+function get_values(N) {
+  values = [];
   var i
   for (i = 0; i < Math.pow(10,N); i++) {
     values.push(Math.floor(Math.pow(10,N) * Math.random()))
   }
-  return values
-}
 
-function get_values(N) {
-  values = [];
-  eval_f(N)
   document.getElementById("number1").innerHTML = 0
   document.getElementById("number2").innerHTML = 0
   console.log('New function values:')
   console.log(values)
 }
 
+
+var values = []
 get_values(2)
 
 
