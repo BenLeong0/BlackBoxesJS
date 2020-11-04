@@ -1,0 +1,296 @@
+<html>
+  <head>
+    <title>BlackBox</title>
+    <link href="https://fonts.googleapis.com/css?family=Cambo|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.png">
+    <style>
+      body {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      h1 {
+        font-size: 300%;
+        margin: 0.67em 0 0 0.33em
+      }
+
+      #blackbox {
+        display: inline-block;
+        max-width: 300px;
+        width: 80%;
+        background-color: #010203;
+        color: white
+      }
+
+      .button {
+        display: inline-block;
+        width: 35%;
+        padding-top: 35%;
+        margin-top: 7.5%;
+        margin-bottom: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+
+      .buttontext {
+        display: none;
+        font-family: 'Open Sans', sans-serif;
+        height: 10%
+      }
+
+      #buttona1, #buttona2 {
+        background-color: CornflowerBlue;
+      }
+
+      #buttonb1, #buttonb2 {
+        background-color: aquamarine;
+      }
+
+      a {
+        display: inline-block;
+        width: 100%
+      }
+
+      #numberdisplaybox {
+        display: inline-block;
+        width: 20%;
+        background-color: grey;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-bottom: 7.5%;
+      }
+
+      #number {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        font-family: 'Roboto Mono', monospace;
+        vertical-align: top;
+        font-size: 200%;
+      }
+
+      #question_opener {
+        display: inline-block;
+        width: 20%
+      }
+
+      #questions {
+        text-align: justify;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
+        width: 70%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+
+      .question {
+        padding: 0px 50px;
+        font-size: 80%;
+      }
+
+      .m {
+        font-family: "Times New Roman", Times, serif;
+        font-style: italic;
+      }
+
+      ol {
+        margin-left: 1em;
+        white-space: normal;
+      }
+
+      li{
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hail's Black Boxes</h1>
+    <span style="margin-bottom:100px">How many digits should be displayed?</span><br>
+    <button onclick="get_values(1)">N=1</button>
+    <button onclick="get_values(2)">N=2</button>
+    <button onclick="get_values(3)">N=3</button>
+    <button onclick="get_values(4)">N=4</button>
+    <button onclick="get_values(5)">N=5</button>
+    <button onclick="get_values(6)">N=6</button>
+    <br><br>
+
+    <div id="blackbox">
+      <button class="button" id="buttona1" onclick="buttonA1()">
+        <div class="buttontext">
+          Button A
+        </div>
+      </button>
+      <button class="button" id="buttonb1" onclick="buttonB1()">
+        <div class="buttontext">
+          Button B
+        </div>
+      </button>
+      <div id="numberdisplaybox"><div id="number1">0</div></div>
+    </div>
+    <div id="blackbox">
+      <button class="button" id="buttona2" onclick="buttonA2()">
+        <div class="buttontext">
+          Button A
+        </div>
+      </button>
+      <button class="button" id="buttonb2" onclick="buttonB2()">
+        <div class="buttontext">
+          Button B
+        </div>
+      </button>
+      <div id="numberdisplaybox"><div id="number2">0</div></div>
+    </div>
+
+
+    <br>
+    <br>
+    <a href="#" id="question_opener">Setup and Questions</a>
+    <div id="questions">
+      <p class="question">
+        You are given two identical black boxes, each with an N-digit
+        (2-digit) display and each with two buttons. The first button resets
+        the display to 0, and the second button updates the display using a
+        complex, unknown but fixed, function <span class='m'>f</span>, so that
+        pressing the first button then repeatedly pressing the second button
+        displays a fixed sequence
+      </p>
+      <p class="question m" style='text-align:center'>
+        x<sub>0</sub> = 0,&nbsp x<sub>1</sub> = f( x<sub>0</sub> ),&nbsp
+        x<sub>2</sub> = f( x<sub>1</sub> ),&nbsp ...,
+      </p>
+      <p class="question">
+        the same for both boxes. In general <span class='m'>x<sub>i</sub> =
+        f<sup> i</sup>( 0 )</span> where <span class='m'>f<sup> i</sup></span>
+        denotes applying function <span class='m'>f</span> repeatedly
+        <span class='m'>i</span> times.
+      </p>
+      <p class="question">
+        You have no pencil and paper, and the display has too many digits for
+        you to remember more than a few displayed values, but you can compare
+        the displays on the two boxes to see if they are equal, and you can
+        count the number of times you press each button.
+      </p>
+      <ol class="question" type="i">
+        <li>
+          Explain briefly why there must exist integers <span class='m'>i, j
+          </span> with <span class='m'>0 ≤ i < j</span> such that
+          <span class='m'>x<sub>i</sub> = x<sub>j</sub></span>.
+        </li>
+        <li>
+          Show that if <span class='m'>x<sub>i</sub> = x<sub>j</sub></span>
+          then <span class='m'>x<sub>i+s</sub> = x<sub>j+s</sub></span> for
+          any <span class='m'>s ≥ 0</span>.
+        </li>
+        <li>
+          Let <span class='m'>m</span> be the smallest number such that
+          <span class='m'>x<sub>m</sub></span> appears more than once in the
+          sequence, and let <span class='m'>p > 0</span> be the smallest
+          number such that <span class='m'>x<sub>m</sub> = x<sub>m+p</sub>
+          </span>. Show that if <span class='m'>i ≥ m</span> and
+          <span class='m'>k ≥ 0</span> then <span class='m'>x<sub>i+kp</sub> =
+            x<sub>i</sub></span>.
+        </li>
+        <li>
+          Given integers <span class='m'>i, j</span> with <span class='m'>0 ≤
+          i < j</span>, show that <span class='m'>x<sub>i</sub> = x<sub>j
+          </sub></span> if and only if <span class='m'>i ≥ m</span> and
+          <span class='m'>j - i</span> is a multiple of <span class='m'>
+          p</span>. [<i>Hint</i>: let <span class='m'>r</span> be the remainder
+          on dividing <span class='m'>j - i</span> by <span class='m'>p</span>,
+          and argue that <span class='m'>r = 0</span>.]
+        </li>
+        <li>
+          You conduct and experiment where (afer restting both boxes) you
+          repeatedly press the second button once on one box and the second
+          button twice on the other box and compare the displays, thus
+          determining the smallest number <span class='m'>u > 0</span> such
+          that <span class='m'>x<sub>u</sub> = x<sub>2u</sub></span>. What
+          relates the value of <span class='m'>u</span> to the (unknown)
+          values of <span class='m'>m</span> and <span class='m'>p</span>?
+        </li>
+        <li>
+          Once <span class='m'>u</span> is known, what experiment would you
+          perform to determine the value of <span class='m'>m</span>?
+        </li>
+        <li>
+          Once <span class='m'>u</span> and <span class='m'>m</span> are
+          known, what experiment would tell you the value of <span class='m'>p
+          </span>?
+        </li>
+      </ol>
+    </div>
+    <br>
+    <a href="https://i.imgur.com/1iFhQoP.png" target="_blank">Source</a>
+
+    <script>
+      var values = []
+
+      function shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+
+          // And swap it with the current element.
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+      }
+
+      function get_values(N) {
+        values = [];
+        for (var i = 0; i < Math.pow(10, N); i++) {
+           values.push(i);
+        }
+        shuffle(values)
+        document.getElementById("number1").innerHTML = 0
+        document.getElementById("number2").innerHTML = 0
+      }
+
+      get_values(2)
+
+
+      function buttonA1() {
+        console.log("pressed button a1!")
+        document.getElementById("number1").innerHTML = 0
+      }
+
+      function buttonB1() {
+        console.log("pressed button b1!")
+        n = parseInt(document.getElementById("number1").innerHTML)
+        document.getElementById("number1").innerHTML = values[n]
+      }
+
+      function buttonA2() {
+        console.log("pressed button a2!")
+        document.getElementById("number2").innerHTML = 0
+      }
+
+      function buttonB2() {
+        console.log("pressed button b2!")
+        n = parseInt(document.getElementById("number2").innerHTML)
+        document.getElementById("number2").innerHTML = values[n]
+      }
+
+      q = document.getElementById("question_opener")
+      q.addEventListener("click", function() {
+        this.classList.toggle("active");
+        var pan = this.nextElementSibling;
+        if (pan.style.maxHeight){
+          pan.style.maxHeight = null;
+        } else {
+          pan.style.maxHeight = pan.scrollHeight + "px";
+        }
+      });
+    </script>
+  </body>
+</html>

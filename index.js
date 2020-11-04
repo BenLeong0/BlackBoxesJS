@@ -1,8 +1,4 @@
-var values = [];
-var N = 2;
-for (var i = 0; i < Math.pow(10, N); i++) {
-   values.push(i);
-}
+var values = []
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -23,18 +19,37 @@ function shuffle(array) {
   return array;
 }
 
-shuffle(values)
-console.log(values)
-
-
-
-function buttonA() {
-  console.log("pressed button a!")
-  document.getElementById("number").innerHTML = 0
+function get_values(N) {
+  values = [];
+  for (var i = 0; i < Math.pow(10, N); i++) {
+     values.push(i);
+  }
+  shuffle(values)
+  document.getElementById("number1").innerHTML = 0
+  document.getElementById("number2").innerHTML = 0
 }
 
-function buttonB() {
-  console.log("pressed button b!")
-  n = parseInt(document.getElementById("number").innerHTML)
-  document.getElementById("number").innerHTML = values[n]
+get_values(2)
+
+
+function buttonA1() {
+  console.log("pressed button a1!")
+  document.getElementById("number1").innerHTML = 0
+}
+
+function buttonB1() {
+  console.log("pressed button b1!")
+  n = parseInt(document.getElementById("number1").innerHTML)
+  document.getElementById("number1").innerHTML = values[n]
+}
+
+function buttonA2() {
+  console.log("pressed button a2!")
+  document.getElementById("number2").innerHTML = 0
+}
+
+function buttonB2() {
+  console.log("pressed button b2!")
+  n = parseInt(document.getElementById("number2").innerHTML)
+  document.getElementById("number2").innerHTML = values[n]
 }
