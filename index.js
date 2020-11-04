@@ -40,8 +40,7 @@ function get_values(N) {
 
   document.getElementById("number1").innerHTML = 0
   document.getElementById("number2").innerHTML = 0
-  console.log('New function values:')
-  console.log(values)
+  console.log('New function values: ['.concat(values[0], ', ', values[1], ', ...]'))
 }
 
 
