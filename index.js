@@ -21,6 +21,7 @@ if (window.innerHeight > window.innerWidth) {
   document.getElementById("question_opener").style.width = "100%"
   document.getElementById("question_opener").style.fontSize = "250%"
   document.getElementById("questions").style.width = "100%"
+  document.getElementById("questions").style.maxWidth = "90%"
   document.getElementById("questions").style.fontSize = "200%"
   document.getElementsByTagName("a")[1].style.width = "100%"
   document.getElementsByTagName("a")[1].style.fontSize = "250%"
