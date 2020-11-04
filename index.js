@@ -53,3 +53,6 @@ function buttonB2() {
   n = parseInt(document.getElementById("number2").innerHTML)
   document.getElementById("number2").innerHTML = values[n]
 }
+
+var w = window.innerWidth;
+document.getElementById("widthinfo").innerHTML = w
