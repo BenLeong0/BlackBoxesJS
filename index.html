@@ -6,18 +6,18 @@
       <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
       <link rel="icon" href="favicon.png">
     </head>
-    <body>
+    <body id="body">
       <h1>Hail's Black Boxes</h1>
-      <span style="margin-bottom:100px">How many digits should be displayed?</span><br>
-      <button onclick="get_values(1)">N=1</button>
-      <button onclick="get_values(2)">N=2</button>
-      <button onclick="get_values(3)">N=3</button>
-      <button onclick="get_values(4)">N=4</button>
-      <button onclick="get_values(5)">N=5</button>
-      <button onclick="get_values(6)">N=6</button>
+      <span style="margin-bottom:100px" id='askdigits'>How many digits should be displayed?</span><br>
+      <button onclick="get_values(1)" class="digitnumber">N=1</button>
+      <button onclick="get_values(2)" class="digitnumber">N=2</button>
+      <button onclick="get_values(3)" class="digitnumber">N=3</button>
+      <button onclick="get_values(4)" class="digitnumber">N=4</button>
+      <button onclick="get_values(5)" class="digitnumber">N=5</button>
+      <button onclick="get_values(6)" class="digitnumber">N=6</button>
       <br><br>
 
-      <div id="blackbox">
+      <div class="blackbox">
         <button class="button" id="buttona1" onclick="buttonA1()">
           <div class="buttontext">
             Button A
@@ -28,10 +28,10 @@
             Button B
           </div>
         </button>
-        <div id="numberdisplaybox"><div id="number1">0</div></div>
+        <div class="numberdisplaybox"><div id="number1">0</div></div>
       </div>
       <div id="mobile"><br><br></div>
-      <div id="blackbox">
+      <div class="blackbox">
         <button class="button" id="buttona2" onclick="buttonA2()">
           <div class="buttontext">
             Button A
@@ -42,7 +42,7 @@
             Button B
           </div>
         </button>
-        <div id="numberdisplaybox"><div id="number2">0</div></div>
+        <div class="numberdisplaybox"><div id="number2">0</div></div>
       </div>
 
 
@@ -125,10 +125,6 @@
       </div>
       <br>
       <a href="blackbox_question.png" target="_blank">Source</a>
-      <br>
-      <br>
-      <button onclick="getwidth()">Get width:</button>
-      <p id="widthinfo"></p>
 
       <script src="index.js"></script>
       <script>
