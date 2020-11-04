@@ -40,33 +40,22 @@ if (window.innerHeight > window.innerWidth) {
 
 var values = []
 
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
+function eval_f(N) {
+  values = []
+  var i
+  for (i = 0; i < Math.pow(10,N); i++) {
+    values.push(Math.floor(Math.pow(10,N) * Math.random()))
   }
-
-  return array;
+  return values
 }
 
 function get_values(N) {
   values = [];
-  for (var i = 0; i < Math.pow(10, N); i++) {
-     values.push(i);
-  }
-  shuffle(values)
+  eval_f(N)
   document.getElementById("number1").innerHTML = 0
   document.getElementById("number2").innerHTML = 0
+  console.log('New function values:')
+  console.log(values)
 }
 
 get_values(2)
