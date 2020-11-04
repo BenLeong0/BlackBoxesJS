@@ -3,7 +3,9 @@ console.log(window.innerWidth)
 
 if (window.innerHeight > window.innerWidth) {
   document.getElementById("mobile").style.display = 'inline'
-  console.log('WOO')
+  console.log('Portrait')
+} else {
+  console.log('Landscape')
 }
 
 var values = []
