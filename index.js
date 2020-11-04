@@ -1,3 +1,11 @@
+console.log(window.innerHeight)
+console.log(window.innerWidth)
+
+if (window.innerHeight > window.innerWidth) {
+  document.getElementById("mobile").style.display = 'inline'
+  console.log('WOO')
+}
+
 var values = []
 
 function shuffle(array) {
@@ -55,6 +63,5 @@ function buttonB2() {
 }
 
 function getwidth() {
-  var w = "Total Width: " + screen.width;
-  document.getElementById("widthinfo").innerHTML = w
+  document.getElementById("widthinfo").innerHTML =  window.innerHeight
 }

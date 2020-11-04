@@ -96,3 +96,7 @@ ol {
 li{
   margin: 10px 0;
 }
+
+#mobile {
+  display: none;
+}
