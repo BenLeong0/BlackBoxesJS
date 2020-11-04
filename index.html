@@ -2,14 +2,27 @@
     <head>
       <link href="https://fonts.googleapis.com/css?family=Cambo|Open+Sans" rel="stylesheet">
       <link rel="stylesheet" href="mystyle.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
       <script src="index.js"></script>
     </head>
     <body>
       <h2>Hail's Black Box</h2>
 
-      <div id="blackbox">yo</div>
-
-      <p id="number">1</p>
-      <button type="button" onclick="myIncrement()">Try it</button>
+      <div id="blackbox">
+        <button class="button" id="buttona" onclick="buttonA()">
+          <div class="buttontext">
+            Button A
+          </div>
+        </button>
+        <button class="button" id="buttonb" onclick="buttonB()">
+          <div class="buttontext">
+            Button B
+          </div>
+        </button>
+        <div id="numberdisplaybox"><div id="number">0</div></div>
+      </div>
+      <br>
+      <br>
+      <a href="blackbox_question.png">Original question</a>
     </body>
 </html>

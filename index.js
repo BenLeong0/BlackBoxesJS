@@ -1,16 +1,40 @@
-console.log("hi");
-var number = 5; // inline comment
+var values = [];
+var N = 2;
+for (var i = 0; i < Math.pow(10, N); i++) {
+   values.push(i);
+}
 
-/*
-multiline comment!
-*/
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
 
-number = 9
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
 
-// let d = new Date();
-// document.body.innerHTML += "<h1>Today's date is " + d + "</h1>"
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
 
-function myIncrement() {
-    n = parseInt(document.getElementById("number").innerHTML) + 1
-    document.getElementById("number").innerHTML = n
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
+
+  return array;
+}
+
+shuffle(values)
+console.log(values)
+
+
+
+function buttonA() {
+  console.log("pressed button a!")
+  document.getElementById("number").innerHTML = 0
+}
+
+function buttonB() {
+  console.log("pressed button b!")
+  n = parseInt(document.getElementById("number").innerHTML)
+  document.getElementById("number").innerHTML = values[n]
+}

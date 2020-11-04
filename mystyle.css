@@ -5,8 +5,54 @@ body {
 
 #blackbox {
   display: inline-block;
-  width: 500px;
-  height: 0;
-  padding-top: 100%;
-  background-color: rgba(0,0,0,1);
+  max-width: 800px;
+  width: 80%;
+  background-color: #010203;
+  color: white
+}
+
+.button {
+  display: inline-block;
+  width: 35%;
+  padding-top: 35%;
+  margin-top: 7.5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.buttontext {
+  display: none;
+  font-family: 'Open Sans', sans-serif;
+  height: 10%
+}
+
+#buttona {
+  background-color: CornflowerBlue;
+}
+
+#buttonb {
+  background-color: aquamarine;
+}
+
+a {
+  display: inline-block;
+  width: 100%
+}
+
+#numberdisplaybox {
+  display: inline-block;
+  width: 20%;
+  background-color: grey;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 7.5%;
+}
+
+#number {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-family: 'Roboto Mono', monospace;
+  vertical-align: top;
+  font-size: 200%;
 }
